@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Etiqueta "link:favicon" para incorporar un ícon -->
+     <link rel="shortcut icon" href=""image/x-icon">
+     <!-- Incorporación de estilos -->
+     <link rel="stylesheet" href="../static/css/formulario2.css">
+
+    <title>Formulario</title>
+</head>
+<body>
+    <header>   <!-- menú de navegación -->
+        <div class="container">
+            <img src="../static/img/VGD travel.png" alt="Logo de la Agencia de Viajes" class="logo">
+            <h1>VGD Travel</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Quienes somos</a></li>
+                    <!-- <li><a href="https://flybondi.com/ar/destinos/" target="_blank">Destinos</a></li> -->
+                    <li><a href="equipaje.html">Tips de Equipaje<a></a></li>
+                    <li><a href="vehiculos.html">Alquiler Vehículos</a></li>
+                    <li><a href="formulario.html">Compañero de Aventuras<a></a></li>
+                    </ul>   
+                </nav>    
+        </div>
+    </header>
+    <main>
+        <div class="container-form">
+        <!-- <section> -->
+            
+                <h1>Buscando un acompañante de viaje...</h1> <br>
+            
+            <form  class="formulario" id="formulario" onsubmit="return validarDatos()"
+             action="https://formspree.io/f/mwkgzkgy"
+            method="POST"> 
+                
+                    
+                <div class="info_pers" id="#">
+                    <!-- Grupo Nombre -->
+                    <div class="formulario__grupo" id="grupo__nombre">
+                        <label for="nombre" class="formulario__label">Nombre:</label> 
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="nombre" id="nombre" maxlength="10" required placeholder="Ejem:Johana" >    
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i> <!-- ícono que valida estado -->
+                        </div>
+                        <p class="formulario__input-error">Ingrese un nombre por favor.</p>
+                    </div>
+                    
+                    <!-- </section> -->
+                    
+                    <!-- <section> -->
+                        <!-- Grupo Apellido -->
+                    <div class="formulario__grupo" id="grupo__apellido">
+                        <label for="apellido" class="formulario__label">Apellido:</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="apellido" id="apellido" placeholder="Ejem:Pérez">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">Ingrese un apellido por favor.</p>
+                    </div>
+                    <!-- </section> -->
+
+                    
+                    <!-- Grupo Género -->
+                        <!--SELECT (despliega opciones) -->
+                    <div class="formulario__grupo" id="grupo__genero">    
+                        <label for="genero" class="formulario__label">Género</label>
+                        
+                        <!-- select name="género" id="género" --><!-- SELECT (despliega opciones) -->
+                        <!-- LIST (despliega opciones a medida que ponemos las letras) -->
+                        <div class="formulario__grupo-input">
+                            <input list="sex" class="formulario__input" id="genero" name="genero">
+                            <datalist id="sex">
+                                <option value="masculino"></option>
+                                <option value="femenino"></option>
+                                <option value="otro"></option>
+                                
+                        </div>  
+                        <!-- <p class="formulario__input-error">Por favor seleccione el género.</p>        -->
+                    </div>
+                    
+                    <!-- Grupo DNI -->
+                    <div class="formulario__grupo" id="grupo__dni">
+                        <label for="dni" class="formulario__label">DNI</label>
+                        <div class="formulario__grupo-input">
+                            <input type="number" name="dni" class="formulario__input" id="dni"> <!--min="7" max="8"-->
+                        </div>
+                        <p class="formulario__input-error">Ingrese un dni por favor.</p>
+                    </div>
+
+                    <!-- Grupo Edad -->
+                    <div class="formulario__grupo" id="grupo__edad">
+                        <label for="edad" class="formulario__label">Edad</label>
+                        <div class="formulario__grupo-input">
+                            <input type="number" name="edad" class="formulario__input" id="edad" min="15">
+                        </div>
+                    </div>
+                    
+                    <!-- Grupo F.Nacimiento (fn) -->
+                    <div class="formulario__grupo" id="grupo__fn"></divclass>
+                        <label for="fn" class="formulario__label">Fech. de nacim.</label>
+                        <div class="formulario__grupo-input">
+                            <input type="date" name="fn" class="formulario__input" id="fn">
+                        </div>
+                    </div>
+                    
+                    <!-- Grupo Teléfono -->
+                    <div class="formulario__grupo" id="grupo__telefono">
+                        <label for="telefono" class="formulario__label">Teléfono</label>
+                        <div class="formulario__grupo-input">
+                            <input type="number" class="formulario__input" name="telefono" id="telefono"  placeholder="1122334455">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <div id="#">
+                        <p class="formulario__input-error">El teléfono sólo puede contener números y el máximo es 14 dígitos.</p>
+                        </div>
+                    </div>
+                    
+
+
+                    <!-- Grupo Correo Electrónico -->
+                    <div class="formulario__grupo" id="grupo__correo">
+                        <label for="correo" class="formulario__label">Email</label>
+                        <div class="formulario__grupo-input">
+                            <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                            <p class="formulario__input-error">El correo sólo puede contener letras, números, puntos, guiones y guión bajo.</p>
+                        </div>    
+                    </div>
+                    
+                </div>    
+
+                <hr>  <!------ dibuja una línea horizontal -------->
+                
+                    <div>
+                        <!-- CHECKBOX (permite seleccionar más de una -varias-) -->
+                        <h3>¿Ya has viajado a alguno de estos lugares?</h3>
+                        <input type ="checkbox" name="recibir" id="egipto">
+                        <label for="egipto">Egipto</label>
+
+                        <input type ="checkbox" name="recibir" id="francia">
+                        <label for="francia">Francia</label>
+
+                        <input type ="checkbox" name="recibir" id="australia">
+                        <label for="australia">Australia</label>
+
+
+                        <input type ="checkbox" name="recibir" id="brasil">
+                        <label for="brasil">Brasil</label>
+                    </div>
+                
+                        <!-- RADIOBUTTON (permite seleccionar solo una) -->
+                        <h3>¿Qué destino te gustaría tomar?</h3>
+                        <input type ="radio" name="gusta" id="japon">
+                        <label for="japon">Japón</label>
+
+                        <input type ="radio" name="gusta" id="nepal">
+                        <label for="nepal">Nepal</label>
+
+                        <input type ="radio" name="gusta" id="moscu">
+                        <label for="moscu">Moscú</label>
+                    
+
+                    <br>
+                    <h3>Buscador de compañero de viaje</h3>
+                    <div>
+                        <!--SELECT (despliega opciones) -->
+                        <label for="partida">Lugar de partida</label>
+                        <input list="procedencia" id="partida" name="partida">
+                        <datalist id="procedencia">
+                            <option value="América"></option>
+                            <option value="Europa"></option>
+                            <option value="África"></option>
+                            <option value="Oceanía"></option>
+                            <option value="indistinto"></option>         
+                    </div>
+                    <br>
+                    <div>
+                        <label for="generos">género del viajero</label>
+                        <input list="sex" id="generos" name="generos">
+                        <datalist id="sex">
+                            <option value="indistinto"></option>
+                            <option value="masculino"></option>
+                            <option value="femenino"></option>
+                            <option value="otro"></option>
+                            <option value="indistinto"></option>
+                    </div>  
+                    <br>                
+            <br>
+            <div>
+                <fieldset class="formulario-fieldset">
+                    <legend>Datos Personales</legend>
+
+                    <div><label for="number">Teléfono</label>
+                        <input type="number" name="number" id="number">
+                    </div>
+                    
+                    <div>
+                        <label for="file">Dejanos tu CV para formar parte del equipo</label>
+                        <input type="file" name="file" id="file">
+                    </div>
+                </fieldset>
+            </div>
+
+                        <div>
+                            <blockquote contenteditable="true"></blockquote>
+                                <label for="comentario" >Comentario:</label>
+                                <textarea name="comentario" id="comentario" cols="20" rows="5" maxlength="200">Dejanos aquí tu comentario
+
+                                </textarea>
+                            </blockquote>
+                        <!-- * Agregar área comentario. -->
+                        
+                    </div>
+                    <br>
+
+                    <!-- <div class="formulario__mensaje" id="formulario__mensaje">
+                        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+                    </div> -->
+                    
+
+                    <div id="#" class="formulario__grupo formulario__grupo-btn-enviar">
+                        <input type="submit" value="Enviar" class="formulario-btn">
+                        <input type="reset" value="Borrar" class="formulario-btn">
+                        <p class="formulario__mensaje-exito" id="formulario__mensaje-exito"> El formulario ha sido enviado!!</p>
+                    </div>
+                    
+                    <div id="campos"></div>
+
+                </form>
+        <!-- <> -->
+            
+               <!--  <div class="contenido-sec" id="#">
+                    <img width="#" height="#" src="../static/img/portrait-two-happy-girls-dressed-autumn-clothes.jpg"alt="#">
+                
+                    <img width="#" height="#" src="../static/img/mapa.jpg" alt="#">
+                
+                    <img width="#" height="#"src="../static/img/compañera_de_viaje.jpeg" alt="#">
+                </div>     -->
+            
+        </div>    
+    </main>
+    <script src="../static/js/validacion5.js"></script>
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
+    <footer>
+        <section>
+            <div class="container__footer">
+                <p>&copy; 2024 VGD Travel</p>
+                <div class="redes-sociales">
+                <a href="#"><img src="../static/img/facebook.png" width="40" height="40" alt="Facebook"></a>
+                <a href="#"><img src="../static/img/twitter.png" width="40" height="40" alt="X"></a>
+                <a href="#"><img src="../static/img/instagram.png" width="40" height="40" alt="Instagram"></a>
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+</body>
+</html>

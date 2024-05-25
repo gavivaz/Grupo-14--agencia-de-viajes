@@ -1,0 +1,123 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:linear-gradient(to right, var(--color-azul-body), var(--color-gris-body), var(--color-azul-body));
+    background-image:url(../img/flat3-lay-hat-notebook-arrangement.jpg);
+    background-repeat:no-repeat ;
+    background-size: 100%;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    font-size: 2em;
+}
+
+h2{
+    font-size: 1em;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Estilos del encabezado */
+header {
+    background: rgb(19, 19, 101);;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header .logo-container {
+    float: right;
+    margin-right: 20px; /* Ajusta el espacio entre el logo y el texto */
+}
+
+.logo {
+    width: 100px; /* Ancho del logo */
+    height: 100px; /* Altura del logo */
+    border-radius: 50%; /* Hace que el logo sea redondo */
+   
+}
+
+header h1 {
+    margin: 0;
+    line-height: 50px; /* Alinea verticalmente el texto con el logo */
+}
+
+
+header h1 {
+    flex: 1;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none; /* Elimina los marcadores de lista */
+    margin: 0; /* Elimina el margen exterior de la lista */
+    padding: 0; /* Elimina el relleno interior de la lista */
+}
+
+nav ul li {
+    display: inline; /* Muestra los elementos de lista en línea */
+    margin-left: 20px; /* Agrega un margen a la izquierda de cada elemento de lista */
+}
+
+nav ul li a {
+    color: hsl(0, 0%, 100%); /* Establece el color del texto de los enlaces */
+    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
+}
+
+/* Estilos del pie de página */
+footer {
+    background: rgb(19, 19, 101);;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+.redes-sociales {
+    margin-top: 20px;
+}
+
+.redes-sociales a {
+    margin-right: 10px;
+}
+
+
+.conteiner2{
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    flex-wrap: wrap;
+}
+table{
+    width: 50%;
+    border-spacing: 0;
+
+}
+
+th, td{
+    text-align: center;
+    padding: 10px;
+    font-size: 1em;
+
+}
+
+th{
+    background-color: lightsteelblue;
+    color: dimgrey;
+}
+
+
+table,th, td{
+    border: 1px solid black;
+}

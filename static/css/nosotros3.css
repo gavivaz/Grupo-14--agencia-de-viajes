@@ -1,0 +1,464 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+:root {
+    --color-azul-header:rgb(19, 19, 101);
+    --color-titulo: #c891d6;
+    font-size: 16px;   
+}
+
+body {
+    background: #E9ECF4;
+    color: #000;
+    font-family: sans-serif;    
+}
+
+ 
+.contenedor-body {
+    
+    width: 100%;
+    max-width: 1400px;
+    /* height: 60vh; */
+    
+    
+    /* margin: 20px auto; 20px arriba y abajo. Auto para los costados */
+    /* overflow: hidden; */
+    display: grid;
+    /*grid-gap: 20px; espaciado e/ c/ elem en la parte interna*/
+    grid-template-columns: repeat(3, 1fr); /*3columnas*/
+    grid-template-rows: repeat(4,auto); /*4filas*/
+
+    /*otra forma con grid*/
+    /*en este caso se especifican 4 filas. Cada una tiene 3 columnas*/
+    grid-template-areas: "header header header"
+                        "contenido contenido sidebar"
+                        "widget-1 widget-2 sidebar"
+                        "footer footer footer";
+}
+
+.contenedor-body > div,  /*hijos directos*/
+.contenedor-body .header,
+.contenedor-body .contenido,
+.contenedor-body .sidebar,
+.contenedor-body .footer{
+    background: #fff;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.contenedor-body .header {
+    /* background: #12203E; */
+    background-color: var(--color-azul-header);
+    color: #fff;
+
+    /*para la 2da forma de grid*/
+    grid-area: header;
+
+    /* para cdo utilizamos @query  -1er forma-*/
+    /* grid-column-start: 1;donde inicia */
+    /* grid-column-end: -1;si no sabemos qué cant de colum hay, pero quiero que abarque todo */
+    
+}
+/* para cdo utilizamos @query -1er forma-
+.contenedor-body .contenido {
+    grid-column: span 2;
+} */
+
+.contenedor-body .contenido {
+    
+    /*para la 2da forma de grid*/
+    grid-area: contenido;
+} 
+
+
+.contenido {
+    height: 800px;
+}    
+
+.sec-ola {
+    width: 100%;
+    height: 60%;
+    background: #20002c;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #cbb4d4, #20002c);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, hsla(283, 27%, 77%, 0.61), hsla(284, 100%, 9%, 0.61)), url(../img/medium3-shot-woman-working-office-travel-agency.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+
+    background-repeat:no-repeat ;
+   /* background-size: 100%;*/
+    background-size: cover;/*ajusta la imagen al tamño del contenedor*/
+    /* background-position: top; */
+    background-attachment: fixed;
+    position:relative;
+    
+}
+.ola {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-right: 0;
+    /* overflow: hidden; */
+}
+
+
+.sec-texto {
+    align-items: center;
+    text-align: justify;
+    margin-top: 20px;   
+    object-fit: cover; 
+    overflow: auto;
+        
+}
+
+
+.sec-texto p {
+    align-items: center;
+    text-align: justify;
+    margin-right: 40px;  
+    margin-left: 20px; 
+    /*object-fit: cover; */ 
+    overflow: auto;
+        
+}
+
+h2 {
+    color: var(--color-titulo);
+    text-align: center;
+    padding-bottom: 30px;
+    margin-top: 0;
+    padding-top: 0;
+    
+    
+}
+
+
+.contenedor-body .sidebar {
+    grid-column: 3 / 4;
+    /* background: #fAA430; */
+    position: relative;
+    text-align: center;
+    display: flexbox; /*FLEXBOX*/
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;/*se le puede poner un tamaño mín*/
+    min-width: 200px;
+    object-fit: cover;
+    
+    /*para la 2da forma de grid*/
+    grid-area: sidebar;
+
+    /*para cdo utilizamos @query- 1er forma-
+    grid-row: 2 / 4; /*o span de 2 (p/no calcular la línea. Pero lo va a ubicar arriba cdo sea responsive)*/
+    /* grid-row: span 2; de esta manera lo sitúa abajo cdo es responsive */
+}
+
+.card1 {
+    width: 25vw;
+    height: auto;
+    display: flex;
+    /* align-items: flex-end; */
+    justify-content: center;
+    object-fit: cover;
+}
+
+.card1 img {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    object-fit: cover;
+    align-items: flex-end;
+}
+
+#video {
+    width: 420px;
+    height: 910px;
+    display: flex;
+    object-fit: cover;
+    
+    
+    
+}
+
+#mapa {
+    width: 100%;
+    height: auto;
+    display: flex;
+    object-fit: cover;
+    
+    
+    
+}
+.card2 {
+    /* height: 20px;*/
+    width: 25vw; 
+    display:inline;
+    justify-content: left;
+    align-items:flex-start;
+    object-fit: cover;
+    
+
+}
+
+main {
+    min-height: 300px;
+    overflow:auto;
+}
+
+/* Estilos del encabezado */
+header {
+    background: rgb(19, 19, 101);;
+    color: #fff;
+    padding: 20px 0;
+    padding-left: 20px;
+    width: 100%;
+  
+}
+
+
+header .logo-container {
+    float: right;
+    margin-right: 20px; /* Ajusta el espacio entre el logo y el texto */
+
+}
+
+.logo {
+    width: 100px; /* Ancho del logo */
+    height: 100px; /* Altura del logo */
+    border-radius: 50%; /* Hace que el logo sea redondo */
+ 
+}
+
+
+header h1 {
+    margin: 0;
+    line-height: 50px; /* Alinea verticalmente el texto con el logo */
+    flex: 1;
+    margin-left: 20px;
+    
+}
+
+
+.container {
+    align-items: center;
+    padding-left: 120px;
+}
+
+nav ul {
+    list-style: none; /* Elimina los marcadores de lista */
+    margin: 0; /* Elimina el margen exterior de la lista */
+    padding: 0; /* Elimina el relleno interior de la lista */
+    
+    display: inline; /* En línea */
+    vertical-align:middle; /* alineac.vertical */
+
+}
+
+nav ul li {
+    display: inline; /* Muestra los elementos de lista en línea */
+    margin-left: 20px; /* Agrega un margen a la izquierda de cada elemento de lista */
+
+}
+
+nav ul li a {
+    color: hsl(0, 0%, 100%); /* Establece el color del texto de los enlaces */
+    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
+
+}
+
+/* Estilos del pie de página */
+footer {
+    background: rgb(19, 19, 101);;
+    color: #fff;
+    text-align: center;
+    /* padding: 20px 0; */
+}
+
+footer p {
+    margin: 0;
+    color: #fff;
+    font-size: 18px;
+}
+
+.redes-sociales {
+    margin-top: 20px;
+}
+
+.redes-sociales a {
+    margin-right: 10px;
+}
+
+
+
+
+.contenedor-body .widget-1,
+.contenedor-body .widget-2 {
+   /*  background: #55a8fd; */
+    color: #fff;
+    height: 200px;
+    /* width: 20vw */
+    text-align: center;
+    display: flex;/*FLEXBOX*/
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-body .widget-1 {
+    
+    
+    /*para la 2da forma de grid*/
+     grid-area: widget-1;
+}
+
+.contenedor-body .widget-2 {
+    display: inline-block;
+    align-items: center;
+    justify-content:left;
+    padding-top: 20px;
+
+    /*para la 2da forma de grid*/
+    grid-area: widget-2;
+
+}
+
+.contenedor-body .footer {
+    background: #12203E;
+    color: #fff;
+
+    /*para la 2da forma de grid*/
+    grid-area: footer;
+
+    /*para 1er forma-
+    grid-column: span 3;*/
+} 
+
+
+/*Diseño Responsivo*/
+@media screen and (max-width: 768px){  
+    body {
+        /* background-color: lightblue; */
+    }
+    /*para 2da forma-*/
+    .contenedor-body {
+        grid-template-areas: "header header header"
+                            "contenido contenido contenido"
+                            "sidebar sidebar sidebar"
+                            "widget-1 widget-2 widget-2"
+                            "footer footer footer";
+                               
+    }
+
+
+    
+    #video {
+        width: 100%;
+        height: 50vh;
+        /* display: flex; */
+        object-fit: cover; 
+        /* overflow: auto; */
+        margin-top: 10px;
+}
+#sede p {
+    font-size: 11px;
+} 
+
+#mapa {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    object-fit: cover;
+    
+}
+
+.container{
+       /*  align-items:end;
+        text-align:left; */
+        padding-left: 20px;
+    
+}
+
+    /*para 1er forma-*/
+    .contenedor-body .contenido {
+      /*para 1er forma-
+        grid-column: 1 / -1;*/
+    }
+
+    .contenedor-body .sidebar {
+        /*para 1er forma-
+        grid-column: 1 / -1;*/
+    }
+  
+    .contenedor-body .widget-1{  
+        /*para 1er forma-
+        grid-column: span 2;*/
+    }
+}
+
+
+
+@media screen and (min-width:769px) and (max-width: 1279px) {  
+    body {
+        /* background-color: lightgreen;; */
+        }
+    .contenedor-body {
+        grid-template-areas: "header header header"
+                            "contenido contenido contenido"
+                            "sidebar sidebar sidebar"
+                            "widget-1 widget-2 widget-2"
+                            "footer footer footer";
+        }  
+    .sidebar {
+        max-height: 400px ;
+    }    
+
+    .container {
+        width: 95%;
+        padding-left: 0px;
+    }
+
+    .texto{
+        padding-right: 10px;
+    }
+    #mapa {
+        width: 100%;
+        height: 19vh;
+        display: flex;
+        align-items: flex-end;
+        object-fit: cover;
+        padding: auto;
+    }
+
+    #video {
+        height: 200px;
+        width: 100%;
+    }  
+    #sede p {
+        margin-bottom: 10px;
+       
+    }
+footer {
+    text-align:center;
+    
+    }
+.container-footer {
+    margin-left: 50px;
+    padding-left: 0;
+}    
+}
+
+
+
+@media screen and (min-width:1280px) {
+    body {
+        /* background-color: lightcoral;   */
+    }
+   .sec-video{
+    height: 100%;
+    width: auto;
+        
+   }
+   
+  h2 {
+    font-size: 3em;
+  }
+}
